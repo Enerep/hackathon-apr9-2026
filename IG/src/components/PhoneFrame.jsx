@@ -94,8 +94,8 @@ function SplashScreen({ onDone }) {
 
 export { IGLogo, HandIcon };
 
-export default function PhoneFrame({ children }) {
-  const [showSplash, setShowSplash] = useState(true);
+export default function PhoneFrame({ children, showSplashScreen = true }) {
+  const [showSplash, setShowSplash] = useState(showSplashScreen);
 
   return (
     <div className="h-full flex items-center justify-center bg-[#1a1a1a] p-4">
