@@ -1,5 +1,5 @@
-import communityImg1 from '../../../docs/img1.png';
-import communityImg2 from '../../../docs/img2.png';
+import communityImg1 from 'docs/img1.png';
+import communityImg2 from 'docs/img2.png';
 
 export const posts = [
   {
