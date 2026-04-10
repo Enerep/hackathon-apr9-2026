@@ -10,7 +10,7 @@ export default function PostCard({ post }) {
   const [localLikes, setLocalLikes] = useState(post.likes);
   const [showHeart, setShowHeart] = useState(false);
   const [showReportModal, setShowReportModal] = useState(false);
-  const [showReportConfirmation, setShowReportConfirmation] = useState(false);
+  const [isReported, setIsReported] = useState(false);
   const lastTap = useRef(0);
   const canReport = !post.isAI && post.isHumanVerified;
 
@@ -42,7 +42,7 @@ export default function PostCard({ post }) {
 
   const handleReport = () => {
     setShowReportModal(false);
-    setShowReportConfirmation(true);
+    setIsReported(true);
   };
 
   return (
@@ -103,6 +103,18 @@ export default function PostCard({ post }) {
                 >
                   Show anyway
                 </button>
+              </div>
+            </div>
+          )}
+          {isReported && (
+            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-dark/60 backdrop-blur-[10px]">
+              <div className="text-center px-6">
+                <p className="text-sm font-medium text-cream mb-1">
+                  You have reported this post.
+                </p>
+                <p className="text-xs text-cream/80">
+                  We will review this post.
+                </p>
               </div>
             </div>
           )}
@@ -169,26 +181,6 @@ export default function PostCard({ post }) {
               className="mt-4 w-full rounded-2xl border border-brown/15 px-4 py-3 text-sm font-medium text-brown/80 active:bg-dark/5 transition-colors"
             >
               Cancel
-            </button>
-          </div>
-        </div>
-      )}
-
-      {showReportConfirmation && (
-        <div className="fixed inset-0 z-[260] flex items-center justify-center bg-dark/45 px-6">
-          <div className="w-full max-w-[320px] rounded-3xl bg-cream p-5 shadow-2xl">
-            <p className="text-base font-semibold text-dark">Report submitted</p>
-            <p className="mt-2 text-sm leading-6 text-brown/80">
-              Our moderation team will review and take action, and we won&apos;t be showing posts related to this.
-            </p>
-            <button
-              type="button"
-              onClick={() => {
-                setShowReportConfirmation(false);
-              }}
-              className="mt-5 w-full rounded-2xl bg-dark px-4 py-3 text-sm font-medium text-cream active:opacity-90 transition-opacity"
-            >
-              Done
             </button>
           </div>
         </div>
