@@ -6,12 +6,10 @@ const AppStateContext = createContext(null);
 export function AppStateProvider({ children }) {
   const [likedPosts, setLikedPosts] = useLocalStorage('momento_likedPosts', []);
   const [revealedAIPosts, setRevealedAIPosts] = useLocalStorage('momento_revealedAI', []);
-  const [reelMinutesWatched, setReelMinutesWatched] = useLocalStorage('momento_reelMinutes', 0);
   const [timeSpentToday, setTimeSpentToday] = useLocalStorage('momento_timeSpent', 18);
   const [scrollReminderEnabled, setScrollReminderEnabled] = useLocalStorage('momento_scrollReminder', true);
   const [scrollReminderInterval, setScrollReminderInterval] = useLocalStorage('momento_scrollInterval', 20);
   const [aiContentSetting, setAiContentSetting] = useLocalStorage('momento_aiContent', 'blur');
-  const [dailyReelLimit, setDailyReelLimit] = useLocalStorage('momento_reelLimit', 10);
   const [postsLikedToday, setPostsLikedToday] = useLocalStorage('momento_postsLikedToday', 12);
 
   const toggleLike = (postId) => {
@@ -32,17 +30,15 @@ export function AppStateProvider({ children }) {
     () => ({
       likedPosts, toggleLike,
       revealedAIPosts, revealAIPost,
-      reelMinutesWatched, setReelMinutesWatched,
       timeSpentToday, setTimeSpentToday,
       scrollReminderEnabled, setScrollReminderEnabled,
       scrollReminderInterval, setScrollReminderInterval,
       aiContentSetting, setAiContentSetting,
-      dailyReelLimit, setDailyReelLimit,
       postsLikedToday,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [likedPosts, revealedAIPosts, reelMinutesWatched, timeSpentToday,
-     scrollReminderEnabled, scrollReminderInterval, aiContentSetting, dailyReelLimit, postsLikedToday],
+    [likedPosts, revealedAIPosts, timeSpentToday,
+     scrollReminderEnabled, scrollReminderInterval, aiContentSetting, postsLikedToday],
   );
 
   return (

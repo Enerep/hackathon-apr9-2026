@@ -9,7 +9,6 @@ export default function Settings() {
   const navigate = useNavigate();
   const { logout } = useAuth();
   const {
-    dailyReelLimit, setDailyReelLimit,
     scrollReminderEnabled, setScrollReminderEnabled,
     scrollReminderInterval, setScrollReminderInterval,
     aiContentSetting, setAiContentSetting,
@@ -30,24 +29,6 @@ export default function Settings() {
       </header>
 
       <div className="px-4 pt-3 space-y-3">
-        <Section title="Daily reel limit">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-semibold text-dark">{dailyReelLimit} min</span>
-          </div>
-          <input
-            type="range"
-            min={0}
-            max={30}
-            value={dailyReelLimit}
-            onChange={(e) => setDailyReelLimit(Number(e.target.value))}
-            className="w-full accent-brown h-1.5"
-          />
-          <div className="flex justify-between text-[11px] text-brown/40 mt-1">
-            <span>0</span>
-            <span>30 min</span>
-          </div>
-        </Section>
-
         <Section title="Scroll reminder">
           <div className="flex items-center justify-between mb-3 gap-4">
             <span className="text-[13px] text-brown/70">Remind me to take a break</span>

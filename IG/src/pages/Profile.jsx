@@ -7,7 +7,7 @@ import Avatar from '../components/Avatar';
 import { HumanVerifiedBadge } from '../components/Badge';
 
 export default function Profile() {
-  const { timeSpentToday, postsLikedToday, reelMinutesWatched, dailyReelLimit } = useAppState();
+  const { timeSpentToday, postsLikedToday } = useAppState();
   const { user: authUser } = useAuth();
   const currentUser = authUser ? {
     ...mockUser,
@@ -75,7 +75,6 @@ export default function Profile() {
         <div className="space-y-3">
           <StatRow label="Time spent today" value={`${timeSpentToday} min`} />
           <StatRow label="Posts liked" value={postsLikedToday} />
-          <StatRow label="Reels watched" value={`${reelMinutesWatched} / ${dailyReelLimit} min`} />
         </div>
         {timeSpentToday < 30 && (
           <div className="mt-3 bg-cream rounded-xl px-4 py-2.5 text-center">
