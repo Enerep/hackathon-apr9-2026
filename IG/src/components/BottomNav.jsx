@@ -3,7 +3,7 @@ import { Home, Search, Camera, Heart, User } from 'lucide-react';
 
 const tabs = [
   { to: '/', icon: Home, label: 'Home' },
-  { to: '/explore', icon: Search, label: 'Explore' },
+  { to: '/community', icon: Search, label: 'Community' },
   { to: '/camera', icon: Camera, label: 'Camera' },
   { to: '/activity', icon: Heart, label: 'Activity' },
   { to: '/profile', icon: User, label: 'Profile' },

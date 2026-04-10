@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import AuthLayout from './components/AuthLayout';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -31,7 +31,8 @@ export default function App() {
         }
       >
         <Route path="/" element={<Home />} />
-        <Route path="/explore" element={<Explore />} />
+        <Route path="/community" element={<Explore />} />
+        <Route path="/explore" element={<Navigate to="/community" replace />} />
         <Route path="/camera" element={<Camera />} />
         <Route path="/activity" element={<Activity />} />
         <Route path="/profile" element={<Profile />} />

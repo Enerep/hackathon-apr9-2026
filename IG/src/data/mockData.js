@@ -219,6 +219,33 @@ export const notifications = [
   { id: 10, type: 'follow', username: 'trailrunner', avatarEmoji: '🏃', message: 'started following you', timestamp: '1d ago' },
 ];
 
+export const communityMoments = [
+  {
+    id: 'community-1',
+    username: 'ivy.noon',
+    displayName: 'Ivy',
+    avatarEmoji: '📚',
+    imageColor: '#B8AEA2',
+    location: 'Juniper Cafe',
+    distance: '8 min away',
+    status: 'Studying at this cafe for another hour.',
+    mutualConnection: 'bean.journal',
+    nudge: 'Someone you know is here, want to join?',
+  },
+  {
+    id: 'community-2',
+    username: 'milo.grove',
+    displayName: 'Milo',
+    avatarEmoji: '🌳',
+    imageColor: '#98A38F',
+    location: 'City Park',
+    distance: '12 min away',
+    status: 'I’m at this park walking a loop before sunset.',
+    mutualConnection: 'sierra.light',
+    nudge: 'Someone you know is here, want to join?',
+  },
+];
+
 export const currentUser = {
   username: 'momento.me',
   displayName: 'IG User',
