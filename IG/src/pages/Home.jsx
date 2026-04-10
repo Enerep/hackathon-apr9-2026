@@ -4,7 +4,7 @@ import Avatar from '../components/Avatar';
 import PostCard from '../components/PostCard';
 import ScrollPauseCard from '../components/ScrollPauseCard';
 import StoryViewer from '../components/StoryViewer';
-import { IGLogo, HandIcon } from '../components/PhoneFrame';
+import { HandIcon } from '../components/PhoneFrame';
 
 function StoriesRow({ onOpen }) {
   return (
@@ -26,10 +26,7 @@ export default function Home() {
     <div className="relative">
       <header className="sticky top-0 z-30 bg-cream/95 backdrop-blur-sm border-b border-tan/15">
         <div className="px-4 pt-2 pb-2 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <IGLogo size={28} />
-            <h1 className="font-display italic text-2xl text-dark">IG</h1>
-          </div>
+          <h1 className="font-display italic text-2xl text-dark">.Human</h1>
           <div className="flex items-center gap-1.5 text-brown/50">
             <HandIcon size={16} />
             <span className="text-[10px] font-semibold tracking-wide uppercase">Human Touch</span>

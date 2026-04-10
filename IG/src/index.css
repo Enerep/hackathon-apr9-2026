@@ -51,6 +51,7 @@
   height: 844px;
   border-radius: 52px;
   border: 8px solid #2a2a2a;
+  transform: translateZ(0);
   box-shadow:
     0 0 0 2px #111,
     0 20px 60px rgba(0,0,0,0.5),

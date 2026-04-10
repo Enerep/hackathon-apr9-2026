@@ -2,8 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, Navigate, Link } from 'react-router-dom';
 import { Clock, CheckCircle, XCircle, RefreshCw, ArrowRight } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
-import { IGLogo } from '../components/PhoneFrame';
-
 export default function VerificationStatus() {
   const navigate = useNavigate();
   const { user, approveVerification, denyVerification, refreshUser, logout } = useAuth();
@@ -119,7 +117,7 @@ function PendingView({ user, simulating, setSimulating, approveVerification, den
   return (
     <div className="min-h-full flex flex-col bg-cream">
       <div className="flex-1 flex flex-col items-center justify-center px-6 py-8">
-        <IGLogo size={40} className="mb-4" />
+        <h2 className="font-display italic text-2xl text-dark mb-4">.Human</h2>
 
         <div className="w-20 h-20 rounded-full bg-brown/10 flex items-center justify-center mb-4">
           <Clock size={40} className="text-brown animate-pulse" />
