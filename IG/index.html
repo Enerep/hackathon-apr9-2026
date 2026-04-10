@@ -1,0 +1,85 @@
+<!--Made by Bat-->
+
+<!doctype html>
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IG</title>
+    <meta
+      name="description"
+      content="A simple 2015 Instagram-inspired IG clone made with plain HTML, CSS, and JavaScript."
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+
+
+
+  <body>
+    <header class="site-header">
+      <div class="topbar">
+        <a class="logo" href="#feed" aria-label="IG home">IG</a>
+
+        <div class="search-wrap">
+          <div class="search-bar">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" type="text" value="Yosemite" aria-label="Search">
+          </div>
+
+          <div class="search-menu" id="search-menu" aria-label="Search suggestions">
+            <div class="search-notch"></div>
+            <div id="search-results"></div>
+          </div>
+        </div>
+
+        <a class="top-user" href="#profile">pat</a>
+      </div>
+    </header>
+
+
+
+    <main class="app-shell">
+      <section class="feed" id="feed">
+        <div id="feed-list"></div>
+      </section>
+
+      <section class="profile-panel" id="profile">
+        <div class="profile-header">
+          <div class="profile-avatar" id="profile-avatar">EG</div>
+          <div class="profile-meta">
+            <div class="profile-name-row">
+              <h2>pat</h2>
+              <button type="button" class="follow-button">Following</button>
+            </div>
+            <p class="profile-stats">
+              <strong>36</strong> posts
+              <strong>412</strong> followers
+              <strong>289</strong> following
+            </p>
+            <p class="profile-bio">
+              Trying to make the internet feel
+              like 2015 again.
+            </p>
+          </div>
+        </div>
+
+        <div class="profile-tabs">
+          <span class="active">POSTS</span>
+          <span>PROFILE</span>
+        </div>
+
+        <div class="profile-grid" id="profile-grid"></div>
+      </section>
+    </main>
+
+
+
+    <footer class="page-footer">
+      <p>Chronological feed. Square photos. Real comments. Less brain-rot.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
