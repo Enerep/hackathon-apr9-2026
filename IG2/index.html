@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IG</title>
+    <meta
+      name="description"
+      content="A mobile-first nostalgic social app demo inspired by early Instagram-era mobile design."
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="stage">
+      <div class="phone-shell">
+        <section class="phone">
+          <header class="status-bar">
+            <span>10:41</span>
+            <span>100%</span>
+          </header>
+
+          <header class="app-header">
+            <button class="icon-button" type="button" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <h1>IG</h1>
+            <div class="header-actions" aria-hidden="true">
+              <span class="icon-heart">♡</span>
+              <span class="icon-chat">▢</span>
+            </div>
+          </header>
+
+          <div class="feed-note">
+            <span class="note-dot"></span>
+            <p>Showing posts from humans you follow · Chronological</p>
+          </div>
+
+          <section class="stories" aria-label="Stories">
+            <div id="stories-list" class="stories-list"></div>
+          </section>
+
+          <section class="feed" aria-label="Post feed">
+            <div id="feed-list"></div>
+          </section>
+
+          <nav class="bottom-nav" aria-label="Bottom navigation">
+            <a href="#top" class="nav-item active">⌂</a>
+            <a href="#stories-list" class="nav-item">⌕</a>
+            <a href="#feed-list" class="nav-item">▢</a>
+            <a href="#feed-list" class="nav-item">♡</a>
+            <a href="#feed-list" class="nav-item">◉</a>
+          </nav>
+        </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
