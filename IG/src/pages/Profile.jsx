@@ -16,6 +16,9 @@ export default function Profile() {
     avatarEmoji: authUser.avatarEmoji,
     isHumanVerified: authUser.isHumanVerified,
     bio: authUser.bio || mockUser.bio,
+    followers: authUser.followers || mockUser.followers,
+    following: authUser.following || mockUser.following,
+    postsCount: authUser.postsCount || mockUser.postsCount,
   } : mockUser;
   const userPosts = posts.filter((p) => !p.isAI).slice(0, 9);
 
