@@ -7,7 +7,6 @@ import { HumanBadge, AIBadge } from './Badge';
 export default function PostCard({ post }) {
   const { likedPosts, toggleLike, aiContentSetting, revealedAIPosts, revealAIPost } = useAppState();
   const liked = likedPosts.includes(post.id);
-  const [localLikes, setLocalLikes] = useState(post.likes);
   const [showHeart, setShowHeart] = useState(false);
   const [showReportModal, setShowReportModal] = useState(false);
   const [isReported, setIsReported] = useState(false);
@@ -24,7 +23,6 @@ export default function PostCard({ post }) {
 
   const handleLike = () => {
     toggleLike(post.id);
-    setLocalLikes((l) => (liked ? l - 1 : l + 1));
   };
 
   const handleDoubleTap = useCallback(() => {
@@ -32,7 +30,6 @@ export default function PostCard({ post }) {
     if (now - lastTap.current < 300) {
       if (!liked) {
         toggleLike(post.id);
-        setLocalLikes((l) => l + 1);
       }
       setShowHeart(true);
       setTimeout(() => setShowHeart(false), 800);
@@ -136,7 +133,11 @@ export default function PostCard({ post }) {
               <Send size={26} strokeWidth={1.8} className="text-dark" />
             </button>
           </div>
-          <p className="text-sm font-semibold text-dark">{localLikes.toLocaleString()} likes</p>
+          <p className="text-sm font-semibold text-dark">
+            {liked
+              ? `You and your mutual friend ${post.mutualLikeName} liked this post`
+              : `Your mutual friend ${post.mutualLikeName} liked this post`}
+          </p>
           <p className="text-sm text-dark mt-1 leading-relaxed">
             <span className="font-semibold">{post.username}</span>{' '}
             {post.caption}

@@ -8,6 +8,7 @@ export const posts = [
     imageColor: '#B8860B',
     caption: 'Golden hour at Yosemite. No filter needed when nature does the work.',
     likes: 234,
+    mutualLikeName: 'trailrunner',
     comments: [
       { username: 'trailrunner', text: 'Stunning light!' },
       { username: 'ansel.vibes', text: 'This is what mornings are for.' },
@@ -24,6 +25,7 @@ export const posts = [
     imageColor: '#6F4E37',
     caption: 'Pour-over ritual. Slow mornings are a form of self-care.',
     likes: 89,
+    mutualLikeName: 'caffeine.monk',
     comments: [{ username: 'caffeine.monk', text: 'What beans are those?' }],
     timestamp: '3h ago',
     location: 'Brooklyn, NY',
@@ -37,6 +39,7 @@ export const posts = [
     imageColor: '#9B59B6',
     caption: 'Dreaming in neon. Created with Midjourney v7.',
     likes: 1023,
+    mutualLikeName: 'art.critic',
     comments: [
       { username: 'art.critic', text: 'Beautiful but not real.' },
     ],
@@ -52,6 +55,7 @@ export const posts = [
     imageColor: '#2E86AB',
     caption: 'Tide pools are tiny universes. Spent an hour just watching.',
     likes: 312,
+    mutualLikeName: 'marine.bio',
     comments: [
       { username: 'marine.bio', text: 'The anemones are incredible there!' },
       { username: 'wanderlust', text: 'Adding to my list.' },
@@ -68,6 +72,7 @@ export const posts = [
     imageColor: '#D4A574',
     caption: 'Sourdough attempt #47. Finally got the ear. Patience pays off.',
     likes: 178,
+    mutualLikeName: 'breadhead',
     comments: [
       { username: 'breadhead', text: 'That crumb shot though!' },
     ],
@@ -83,6 +88,7 @@ export const posts = [
     imageColor: '#E74C3C',
     caption: 'Surreal sunset over impossible mountains. AI art exploration.',
     likes: 567,
+    mutualLikeName: 'dream.scout',
     comments: [],
     timestamp: '7h ago',
     location: null,
@@ -96,6 +102,7 @@ export const posts = [
     imageColor: '#27AE60',
     caption: 'Found this ancient fern trail behind the cabin. Nature reclaims everything.',
     likes: 145,
+    mutualLikeName: 'plantparent',
     comments: [
       { username: 'plantparent', text: 'What fern species is that?' },
       { username: 'hiker.jo', text: 'Magical spot!' },
@@ -112,6 +119,7 @@ export const posts = [
     imageColor: '#8E6F4E',
     caption: 'Shot on Portra 400. There\'s something about waiting for film to develop.',
     likes: 423,
+    mutualLikeName: 'filmisnotdead',
     comments: [
       { username: 'filmisnotdead', text: 'Portra colors are unmatched.' },
       { username: 'darkroom.dan', text: 'The grain is perfect.' },
@@ -128,6 +136,7 @@ export const posts = [
     imageColor: '#E67E22',
     caption: 'Every sunset is unrepeatable. This one felt like it lasted forever.',
     likes: 201,
+    mutualLikeName: 'skygazer',
     comments: [
       { username: 'skygazer', text: 'Those colors are insane.' },
     ],
@@ -143,6 +152,7 @@ export const posts = [
     imageColor: '#8E44AD',
     caption: 'Portrait study generated with Stable Diffusion. Not a real person.',
     likes: 890,
+    mutualLikeName: 'ethics.first',
     comments: [
       { username: 'ethics.first', text: 'At least they labeled it.' },
     ],
@@ -158,6 +168,7 @@ export const posts = [
     imageColor: '#F1C40F',
     caption: 'The sunflowers finally bloomed. Three months of dirt under my nails.',
     likes: 156,
+    mutualLikeName: 'greenthumb',
     comments: [
       { username: 'greenthumb', text: 'Worth every moment!' },
       { username: 'bee.keeper', text: 'The bees must love your garden.' },
@@ -174,6 +185,7 @@ export const posts = [
     imageColor: '#5D6D7E',
     caption: 'Above the clouds at 14,000 feet. Everything is quieter up here.',
     likes: 567,
+    mutualLikeName: 'summit.seeker',
     comments: [
       { username: 'summit.seeker', text: 'Which fourteener?' },
       { username: 'altitude.high', text: 'The silence is the best part.' },
