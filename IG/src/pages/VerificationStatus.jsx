@@ -33,11 +33,11 @@ export default function VerificationStatus() {
           </p>
 
           <button
-            onClick={() => navigate('/login', { replace: true })}
+            onClick={() => navigate('/', { replace: true })}
             className="mt-6 w-full max-w-xs py-3 bg-brown text-cream rounded-xl font-semibold text-[15px] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
           >
-            <LogIn size={18} />
-            Go to Login
+            <ArrowRight size={18} />
+            Continue to IG
           </button>
         </div>
       </div>
