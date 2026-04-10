@@ -38,24 +38,6 @@ function StatusBar() {
   );
 }
 
-function IGLogo({ size = 32, className = '' }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" className={className}>
-      <defs>
-        <linearGradient id="ig-grad" x1="0" y1="48" x2="48" y2="0">
-          <stop offset="0%" stopColor="#C0392B" />
-          <stop offset="50%" stopColor="#D4B896" />
-          <stop offset="100%" stopColor="#8B6F47" />
-        </linearGradient>
-      </defs>
-      <rect width="48" height="48" rx="12" fill="url(#ig-grad)" />
-      <rect x="10" y="10" width="28" height="28" rx="8" stroke="white" strokeWidth="2.5" fill="none" />
-      <circle cx="24" cy="24" r="7.5" stroke="white" strokeWidth="2.5" fill="none" />
-      <circle cx="34" cy="14" r="2" fill="white" />
-    </svg>
-  );
-}
-
 function HandIcon({ size = 20 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -80,10 +62,7 @@ function SplashScreen({ onDone }) {
 
   return (
     <div className={`splash-screen ${exiting ? 'splash-exit' : ''}`}>
-      <div className="splash-icon">
-        <IGLogo size={72} />
-      </div>
-      <div className="splash-logo mt-5">IG</div>
+      <div className="splash-logo">.Human</div>
       <div className="flex items-center gap-1.5 mt-3 splash-tagline">
         <HandIcon size={16} />
         <span>Human Touch</span>
@@ -92,7 +71,7 @@ function SplashScreen({ onDone }) {
   );
 }
 
-export { IGLogo, HandIcon };
+export { HandIcon };
 
 export default function PhoneFrame({ children, showSplashScreen = true }) {
   const [showSplash, setShowSplash] = useState(showSplashScreen);

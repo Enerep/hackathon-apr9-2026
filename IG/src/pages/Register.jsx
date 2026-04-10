@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Eye, EyeOff, UserPlus } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
-import { IGLogo } from '../components/PhoneFrame';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -60,8 +59,7 @@ export default function Register() {
     <div className="min-h-full flex flex-col bg-cream">
       <div className="flex-1 flex flex-col items-center justify-center px-6 py-8">
         <div className="mb-6 flex flex-col items-center">
-          <IGLogo size={56} />
-          <h1 className="font-display italic text-3xl text-dark mt-3">IG</h1>
+          <h1 className="font-display italic text-3xl text-dark">.Human</h1>
           <p className="text-sm text-brown/60 mt-1">Create your account</p>
         </div>
 

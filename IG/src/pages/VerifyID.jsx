@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
 import { Camera, Upload, ShieldCheck, ArrowRight } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
-import { IGLogo } from '../components/PhoneFrame';
-
 export default function VerifyID() {
   const navigate = useNavigate();
   const { user, submitVerification } = useAuth();
@@ -61,8 +59,7 @@ export default function VerifyID() {
     <div className="min-h-full flex flex-col bg-cream">
       <div className="flex-1 px-6 py-6">
         <div className="flex flex-col items-center mb-5">
-          <IGLogo size={40} />
-          <h1 className="font-display italic text-2xl text-dark mt-2">Verify Your Identity</h1>
+          <h1 className="font-display italic text-2xl text-dark">Verify Your Identity</h1>
           <p className="text-[13px] text-brown/50 mt-1 text-center">
             We need to confirm you're a real human to keep our community authentic.
           </p>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Navigate, Link } from 'react-router-dom';
 import { Eye, EyeOff, LogIn } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
-import { IGLogo, HandIcon } from '../components/PhoneFrame';
+import { HandIcon } from '../components/PhoneFrame';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -55,8 +55,7 @@ export default function Login() {
     <div className="min-h-full flex flex-col bg-cream">
       <div className="flex-1 flex flex-col items-center justify-center px-6 py-8">
         <div className="mb-8 flex flex-col items-center">
-          <IGLogo size={64} />
-          <h1 className="font-display italic text-4xl text-dark mt-4">IG</h1>
+          <h1 className="font-display italic text-4xl text-dark">.Human</h1>
           <div className="flex items-center gap-1.5 mt-2 text-brown/50">
             <HandIcon size={14} />
             <span className="text-[13px] font-medium tracking-wide">Human Touch</span>
