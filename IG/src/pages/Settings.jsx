@@ -1,17 +1,24 @@
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, LogOut } from 'lucide-react';
 import { useAppState } from '../hooks/useAppState';
+import { useAuth } from '../hooks/useAuth';
 
 const INTERVALS = [15, 20, 30];
 
 export default function Settings() {
   const navigate = useNavigate();
+  const { logout } = useAuth();
   const {
     dailyReelLimit, setDailyReelLimit,
     scrollReminderEnabled, setScrollReminderEnabled,
     scrollReminderInterval, setScrollReminderInterval,
     aiContentSetting, setAiContentSetting,
   } = useAppState();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login', { replace: true });
+  };
 
   return (
     <div className="min-h-full pb-6">
@@ -127,6 +134,16 @@ export default function Settings() {
               Your attention is not a product.
             </p>
           </div>
+        </Section>
+
+        <Section title="Account">
+          <button
+            onClick={handleLogout}
+            className="w-full flex items-center justify-center gap-2 py-3 bg-red/10 text-red rounded-xl font-semibold text-[14px] active:scale-[0.98] transition-all"
+          >
+            <LogOut size={18} />
+            Log Out
+          </button>
         </Section>
       </div>
     </div>

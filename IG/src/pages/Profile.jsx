@@ -1,12 +1,22 @@
 import { Link } from 'react-router-dom';
 import { Settings } from 'lucide-react';
-import { currentUser, posts } from '../data/mockData';
+import { currentUser as mockUser, posts } from '../data/mockData';
 import { useAppState } from '../hooks/useAppState';
+import { useAuth } from '../hooks/useAuth';
 import Avatar from '../components/Avatar';
 import { HumanVerifiedBadge } from '../components/Badge';
 
 export default function Profile() {
   const { timeSpentToday, postsLikedToday, reelMinutesWatched, dailyReelLimit } = useAppState();
+  const { user: authUser } = useAuth();
+  const currentUser = authUser ? {
+    ...mockUser,
+    username: authUser.username,
+    displayName: authUser.displayName,
+    avatarEmoji: authUser.avatarEmoji,
+    isHumanVerified: authUser.isHumanVerified,
+    bio: authUser.bio || mockUser.bio,
+  } : mockUser;
   const userPosts = posts.filter((p) => !p.isAI).slice(0, 9);
 
   return (
