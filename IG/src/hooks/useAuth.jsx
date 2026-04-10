@@ -7,11 +7,36 @@ const STORAGE_KEYS = {
   currentSession: 'momento_session',
 };
 
+const DEMO_USER = {
+  id: 'demo-user',
+  username: 'demo_user',
+  email: 'demo_user@momento.app',
+  password: 'demo123',
+  displayName: 'Demo User',
+  avatarEmoji: '🎞️',
+  bio: 'Preview account for the app demo.',
+  followers: 24,
+  following: 18,
+  postsCount: 3,
+  isHumanVerified: true,
+  verificationStatus: 'approved',
+  idVerification: {
+    submittedAt: '2026-04-10T00:00:00.000Z',
+  },
+  createdAt: '2026-04-10T00:00:00.000Z',
+};
+
+function ensureDemoUser(users) {
+  return users.some((user) => user.id === DEMO_USER.id)
+    ? users
+    : [DEMO_USER, ...users];
+}
+
 function getStoredUsers() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEYS.users)) || [];
+    return ensureDemoUser(JSON.parse(localStorage.getItem(STORAGE_KEYS.users)) || []);
   } catch {
-    return [];
+    return [DEMO_USER];
   }
 }
 
@@ -142,12 +167,16 @@ export function AuthProvider({ children }) {
     }
   }, [session]);
 
-  const login = useCallback(({ email, password }) => {
+  const login = useCallback(({ identifier, password }) => {
     const users = getStoredUsers();
-    const found = users.find((u) => u.email === email && u.password === password);
+    const normalizedIdentifier = identifier.toLowerCase().trim();
+    const found = users.find((u) =>
+      (u.email === normalizedIdentifier || u.username === normalizedIdentifier) &&
+      u.password === password,
+    );
 
     if (!found) {
-      return { success: false, error: 'Invalid email or password' };
+      return { success: false, error: 'Invalid username, email, or password' };
     }
     if (found.verificationStatus !== 'approved') {
       const statusMessages = {

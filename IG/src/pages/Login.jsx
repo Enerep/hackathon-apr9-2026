@@ -8,7 +8,7 @@ export default function Login() {
   const navigate = useNavigate();
   const { login, isAuthenticated } = useAuth();
 
-  const [email, setEmail] = useState('');
+  const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
@@ -22,14 +22,14 @@ export default function Login() {
     e.preventDefault();
     setError('');
 
-    if (!email.trim()) return setError('Email is required');
+    if (!identifier.trim()) return setError('Username or email is required');
     if (!password) return setError('Password is required');
 
     setLoading(true);
 
     setTimeout(() => {
       const result = login({
-        email: email.toLowerCase().trim(),
+        identifier,
         password,
       });
 
@@ -65,10 +65,10 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-3">
           <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => { setEmail(e.target.value); setError(''); }}
+            type="text"
+            placeholder="Username or email"
+            value={identifier}
+            onChange={(e) => { setIdentifier(e.target.value); setError(''); }}
             className="w-full px-4 py-3 bg-paper border border-tan/30 rounded-xl text-sm text-dark placeholder:text-brown/35 focus:outline-none focus:border-brown/50 focus:ring-1 focus:ring-brown/20 transition-colors"
             autoFocus
           />
@@ -108,6 +108,12 @@ export default function Login() {
             )}
           </button>
         </form>
+
+        <div className="mt-4 w-full max-w-sm rounded-2xl border border-tan/30 bg-paper px-4 py-3 text-sm text-brown/70">
+          <p className="font-semibold text-dark">Demo login</p>
+          <p className="mt-1">Username: <span className="font-mono text-dark">demo_user</span></p>
+          <p>Password: <span className="font-mono text-dark">demo123</span></p>
+        </div>
 
         <div className="mt-6 flex flex-col items-center gap-3">
           <div className="flex items-center gap-3 w-full max-w-sm">
