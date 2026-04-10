@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { Clock, CheckCircle, XCircle, RefreshCw, LogIn } from 'lucide-react';
+import { useNavigate, Navigate, Link } from 'react-router-dom';
+import { Clock, CheckCircle, XCircle, RefreshCw, ArrowRight } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { IGLogo } from '../components/PhoneFrame';
 
@@ -11,15 +11,13 @@ export default function VerificationStatus() {
   const [simulating, setSimulating] = useState(false);
 
   if (!user) {
-    navigate('/login', { replace: true });
-    return null;
+    return <Navigate to="/login" replace />;
   }
 
   const status = user.verificationStatus;
 
   if (status === 'none') {
-    navigate('/verify-id', { replace: true });
-    return null;
+    return <Navigate to="/verify-id" replace />;
   }
 
   if (status === 'approved') {
