@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { Camera, Upload, ShieldCheck, ArrowRight } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { IGLogo } from '../components/PhoneFrame';
@@ -16,13 +16,11 @@ export default function VerifyID() {
   const [error, setError] = useState('');
 
   if (!user) {
-    navigate('/login', { replace: true });
-    return null;
+    return <Navigate to="/login" replace />;
   }
 
   if (user.verificationStatus === 'approved') {
-    navigate('/', { replace: true });
-    return null;
+    return <Navigate to="/" replace />;
   }
 
   const handleFileSelect = (setter) => (e) => {
