@@ -3,7 +3,6 @@ import { stories, posts } from '../data/mockData';
 import Avatar from '../components/Avatar';
 import PostCard from '../components/PostCard';
 import ScrollPauseCard from '../components/ScrollPauseCard';
-import ReelLimitBar from '../components/ReelLimitBar';
 import StoryViewer from '../components/StoryViewer';
 import { IGLogo, HandIcon } from '../components/PhoneFrame';
 
@@ -54,8 +53,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-
-      <ReelLimitBar />
 
       {storyIndex !== null && (
         <StoryViewer
