@@ -124,7 +124,7 @@ export const posts = [
     username: 'rooftop.sunsets',
     avatarEmoji: '🌇',
     isAI: false,
-    isHumanVerified: false,
+    isHumanVerified: true,
     imageColor: '#E67E22',
     caption: 'Every sunset is unrepeatable. This one felt like it lasted forever.',
     likes: 201,
