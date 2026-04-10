@@ -1,3 +1,6 @@
+import communityImg1 from '../../../docs/img1.png';
+import communityImg2 from '../../../docs/img2.png';
+
 export const posts = [
   {
     id: 1,
@@ -226,6 +229,8 @@ export const communityMoments = [
     displayName: 'Ivy',
     avatarEmoji: '📚',
     imageColor: '#B8AEA2',
+    imageSrc: communityImg1,
+    imageFit: 'cover',
     location: 'Juniper Cafe',
     distance: '8 min away',
     status: 'Studying at this cafe for another hour.',
@@ -238,6 +243,8 @@ export const communityMoments = [
     displayName: 'Milo',
     avatarEmoji: '🌳',
     imageColor: '#98A38F',
+    imageSrc: communityImg2,
+    imageFit: 'contain',
     location: 'City Park',
     distance: '12 min away',
     status: 'I’m at this park walking a loop before sunset.',

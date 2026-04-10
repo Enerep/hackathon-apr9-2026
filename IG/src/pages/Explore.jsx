@@ -115,10 +115,25 @@ export default function Explore() {
                 onPointerCancel={isTop ? resetDrag : undefined}
               >
                 <div className="relative h-[300px] film-overlay film-grain">
-                  <div
-                    className="h-full w-full"
-                    style={{ backgroundColor: moment.imageColor }}
-                  />
+                  {moment.imageSrc ? (
+                    <div
+                      className="h-full w-full bg-black"
+                      style={{ backgroundColor: moment.imageColor }}
+                    >
+                      <img
+                        src={moment.imageSrc}
+                        alt={`${moment.displayName} at ${moment.location}`}
+                        className={`h-full w-full grayscale ${
+                          moment.imageFit === 'contain' ? 'object-contain' : 'object-cover'
+                        }`}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="h-full w-full"
+                      style={{ backgroundColor: moment.imageColor }}
+                    />
+                  )}
                   <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-dark/70 via-dark/20 to-transparent px-5 pb-5 pt-10 text-cream">
                     <div className="inline-flex rounded-full bg-cream/18 px-3 py-1 text-[11px] font-semibold tracking-wide uppercase">
                       Gentle nudge
